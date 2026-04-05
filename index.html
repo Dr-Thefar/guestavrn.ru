@@ -1,308 +1,75 @@
-export default function PremiumRestoBotLanding() {
-  const logoSrc = "data:image/webp;base64,UklGRiocAABXRUJQVlA4IB4cAADQjwCdASr0AfQBPjEYi0QiIaEQeaxMIAMEs7d7PcxMb6Lmn97/S9kZ7v/Y/3U/tvv1Wv+6/jz2LeWPTvlU8df5b+z/kz8z+zN/PF2/6n7T/cvy9/rf2n+Xf8z+0/x7/rf8G/Xv+5fXX6r+3v9P/pv8s/4f/Xf7N+pf8v/1v+wf8v/y//o/3z+8f0j/ov8a/7T+6f1j/3f+f/1j+2/+n/9J/2H/xP7P/wv9W/7n+ev9b/Zf9F/zn9mf9L/y3+J/4r/T/8D/6n+v/0X+J/4H+of6H/7P+2/6L/3v+x/2n/Mv0v/7v+U/4j/Pf5v/QP8B//Wf4D/7f/x/4X+1P9X/wn+G/2T/Hv8N/u/8v/yL/Hf8z/w7+g/8f/Df7r+0f5x/6T/Q/1D/y7+6f0X+8/0v+Qv5j/Nv6X+0f8W/7r+3/8H/2v/BP4j+0P4D/rP+qf3D+3P2z/5L+yf6L/Lv9G/vP9G/4T/RP6X/xv8X/q/8z/7D+xv+0/6b+qv8d/4H+O/1L+6v4D/2n+qv8b/9n+Cf5L/VP7D/Bf+V/4r/Lf8v/4r/9n+x/0X+9/8f/9H+2f+H/5j+3f8Z/4D+2/6n/3f+J/6r/Pf7D/xn/Mv5T/8H/Wf9j/y7+o/0L/wP+S/6z+N/3j+zv2R/4L+Vv9L/r/9I/4b/n/9V/yP+R/9L/jv+o/1f/Tf4v/rP9f/4j/af8X/4j+W/0T/g/4b/ov9N/2f+3P6L/Vv6v/Gf9V/uP8B/1j+Sf5P/rf9F/2f+Q/0r+8f+3/5L+Yv0H+qf6D/2v+1v9P/8n+K/1b+av7f/v/1P9H/rP97/yf+qf9T/rP9X/0T+4/8x/2P+o/0T/Nf6v/6H/S/3L/Xv8n/8D/b/9N/7H/Tf0z+4P4v/af9L/0n/K/8n/7T+wv8r/4L+2P9p/8n+Hf5f/4n/Bv7D/4r+cf7j+3v9x/5L+Pf2P/ln9V/4b/qv8j/3H/Kf8B/7v+1v7D/Jf7P/5H+X/4b/oP8V/r/9Y/4z+2v6r/xH+0P6D/oP9f/0n+zv6X/8r/6f8A";
-  const features = [
-    {
-      title: "Запись гостей 24/7",
-      text: "Бот принимает бронирования без пауз и выходных, снижает нагрузку на администраторов и не теряет обращения из мессенджеров.",
-    },
-    {
-      title: "Подбор блюд и напитков",
-      text: "Помогает гостю выбрать позиции из меню, предлагает сочетания и повышает средний чек за счёт умных рекомендаций.",
-    },
-    {
-      title: "Персональный сценарий под заведение",
-      text: "Логика бота адаптируется под формат ресторана, кафе, бара или службы доставки — без шаблонного подхода.",
-    },
-    {
-      title: "Экономия времени команды",
-      text: "Автоматизирует типовые вопросы гостей: бронь, меню, напитки, условия посещения, время работы и подтверждения.",
-    },
-  ];
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GUESTA — боты для ресторанов</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Inter, sans-serif;background:#0A0A0A;color:#fff}
+    .container{max-width:1200px;margin:0 auto;padding:40px 20px}
+    .gold{color:#D4AF37}
+    .btn{padding:14px 26px;border-radius:30px;border:none;cursor:pointer}
+    .btn-gold{background:#D4AF37;color:#000}
+    .btn-outline{border:1px solid #555;color:#fff;background:transparent}
+    h1{font-family:"Cormorant Garamond",serif;font-size:56px;line-height:1.1}
+    h2{font-size:36px;margin-bottom:20px}
+    p{color:#bbb;line-height:1.7}
+    .grid{display:grid;gap:20px}
+    .grid-2{grid-template-columns:1fr 1fr}
+    .grid-3{grid-template-columns:repeat(3,1fr)}
+    .card{background:#111;border:1px solid #222;border-radius:20px;padding:20px}
+    header{display:flex;justify-content:space-between;align-items:center;margin-bottom:60px}
+    .logo{display:flex;align-items:center;gap:10px}
+    .logo img{width:50px;height:50px;border-radius:50%}
+    .section{margin-top:80px}
+  </style>
+</head>
+<body>
 
-  const packages = [
-    {
-      name: "Base",
-      subtitle: "Для заведений, которым нужен сильный старт",
-      price: "от 120 000 ₽",
-      items: [
-        "Бот для записи клиентов",
-        "Базовая логика по меню",
-        "Подключение Telegram или WhatsApp-сценария",
-        "Оформление под стиль заведения",
-        "Обучение персонала",
-      ],
-    },
-    {
-      name: "Premium",
-      subtitle: "Для заведений, которые хотят сервис выше рынка",
-      price: "от 250 000 ₽",
-      items: [
-        "Всё из Base",
-        "Подбор блюд и напитков",
-        "Сложные сценарии продаж",
-        "Автоматические подтверждения и напоминания",
-        "Глубокая адаптация под бизнес-процессы",
-      ],
-      highlighted: true,
-    },
-    {
-      name: "Signature",
-      subtitle: "Индивидуальная разработка под премиум-концепцию",
-      price: "индивидуально",
-      items: [
-        "Полностью кастомный бот",
-        "Несколько сценариев под разные форматы гостей",
-        "Интеграции с CRM и внутренними системами",
-        "Отдельная логика upsell и удержания",
-        "Сопровождение и развитие проекта",
-      ],
-    },
-  ];
+<div class="container">
 
-  const steps = [
-    "Изучаем ваше заведение и путь гостя",
-    "Проектируем сценарии общения и продаж",
-    "Создаём премиальный бот под ваш стиль",
-    "Тестируем и внедряем в работу команды",
-  ];
-
-  return (
-    <div className="min-h-screen bg-[#0A0A0A] text-white font-sans">
-      <section className="relative overflow-hidden border-b border-white/10">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(212,175,55,0.14),transparent_38%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.02),transparent_35%,rgba(255,255,255,0.01))]" />
-
-        <div className="relative mx-auto max-w-7xl px-6 py-8 md:px-10">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <img src={logoSrc} alt="GUESTA" className="h-12 w-12 rounded-full object-cover" />
-              <div>
-                <div className="text-sm uppercase tracking-[0.35em] text-white/55">GUESTA</div>
-                <div className="mt-1 text-xs uppercase tracking-[0.22em] text-white/35">AI Solutions for Restaurants</div>
-              </div>
-            </div>
-            <button className="rounded-full border border-[#D4AF37]/50 px-5 py-2 text-sm text-[#F3D77B] transition hover:bg-[#D4AF37] hover:text-black">
-              Обсудить проект
-            </button>
-          </div>
-        </div>
-
-        <div className="relative mx-auto grid max-w-7xl gap-14 px-6 pb-24 pt-12 md:grid-cols-2 md:px-10 md:pb-32 md:pt-20">
-          <div className="max-w-2xl">
-            <div className="mb-8 flex items-center gap-4">
-              <img src={logoSrc} alt="GUESTA logo" className="h-16 w-16 rounded-full object-cover shadow-[0_0_30px_rgba(212,175,55,0.15)]" />
-              <div className="inline-flex rounded-full border border-[#D4AF37]/25 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.28em] text-[#D4AF37]">
-                Разработка ботов премиум-класса
-              </div>
-            </div>
-            <h1 className="max-w-xl text-5xl font-medium leading-tight md:text-7xl md:leading-[1.03]">
-              Боты для ресторанов,
-              <span className="block text-[#D4AF37]">которые продают сервис.</span>
-            </h1>
-            <p className="mt-8 max-w-xl text-lg leading-8 text-white/70 md:text-xl">
-              Создаём интеллектуальных ботов для рестораторов: запись гостей, помощь в выборе блюд и напитков, автоматизация диалога с клиентом и усиление уровня сервиса.
-            </p>
-            <div className="mt-10 flex flex-wrap gap-4">
-              <button className="rounded-full bg-[#D4AF37] px-7 py-3 text-sm font-medium text-black transition hover:scale-[1.02]">
-                Получить предложение
-              </button>
-              <button className="rounded-full border border-white/15 px-7 py-3 text-sm font-medium text-white transition hover:border-[#D4AF37]/60 hover:text-[#F3D77B]">
-                Посмотреть возможности
-              </button>
-            </div>
-            <div className="mt-14 grid gap-6 sm:grid-cols-3">
-              <div>
-                <div className="text-3xl text-[#D4AF37]">24/7</div>
-                <div className="mt-2 text-sm text-white/55">приём заявок и броней</div>
-              </div>
-              <div>
-                <div className="text-3xl text-[#D4AF37]">Premium</div>
-                <div className="mt-2 text-sm text-white/55">дизайн и сценарии общения</div>
-              </div>
-              <div>
-                <div className="text-3xl text-[#D4AF37]">Custom</div>
-                <div className="mt-2 text-sm text-white/55">решения под формат заведения</div>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex items-center justify-center">
-            <div className="w-full max-w-xl rounded-[32px] border border-white/10 bg-white/[0.04] p-5 shadow-2xl backdrop-blur-xl">
-              <div className="rounded-[28px] border border-[#D4AF37]/20 bg-[#111111] p-6">
-                <div className="mb-6 flex items-center justify-between">
-                  <div>
-                    <div className="text-sm uppercase tracking-[0.25em] text-white/40">Bot Preview</div>
-                    <div className="mt-2 text-2xl text-white">Ресторанный ассистент</div>
-                  </div>
-                  <div className="rounded-full border border-[#D4AF37]/30 px-4 py-2 text-xs text-[#D4AF37]">
-                    online
-                  </div>
-                </div>
-
-                <div className="space-y-4">
-                  <div className="max-w-[82%] rounded-3xl rounded-tl-md bg-white/8 px-5 py-4 text-sm leading-7 text-white/75">
-                    Добрый вечер. Помогу забронировать столик и подобрать блюда к вашему вечеру.
-                  </div>
-                  <div className="ml-auto max-w-[82%] rounded-3xl rounded-tr-md bg-[#D4AF37] px-5 py-4 text-sm leading-7 text-black">
-                    Хочу столик на двоих и рекомендации по вину к стейку.
-                  </div>
-                  <div className="max-w-[82%] rounded-3xl rounded-tl-md bg-white/8 px-5 py-4 text-sm leading-7 text-white/75">
-                    На 20:00 доступно 2 варианта. К стейку рекомендую красное сухое, а также могу сразу предложить подходящие закуски.
-                  </div>
-                </div>
-
-                <div className="mt-6 grid grid-cols-2 gap-3 text-sm">
-                  <div className="rounded-2xl border border-white/10 bg-black/30 p-4 text-white/75">Бронирование столов</div>
-                  <div className="rounded-2xl border border-white/10 bg-black/30 p-4 text-white/75">Рекомендации по меню</div>
-                  <div className="rounded-2xl border border-white/10 bg-black/30 p-4 text-white/75">Подбор напитков</div>
-                  <div className="rounded-2xl border border-white/10 bg-black/30 p-4 text-white/75">Автоответы гостям</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-24 md:px-10">
-        <div className="mb-14 max-w-3xl">
-          <div className="text-sm uppercase tracking-[0.28em] text-[#D4AF37]">Что получает ресторан</div>
-          <h2 className="mt-4 text-4xl leading-tight md:text-5xl">Понятный продукт, за который клиент готов платить.</h2>
-          <p className="mt-6 text-lg leading-8 text-white/65">
-            На сайте важно не просто показать технологию, а донести ценность: что именно получает владелец заведения за свои деньги, как это влияет на сервис, продажи и скорость работы команды.
-          </p>
-        </div>
-
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-          {features.map((item) => (
-            <div
-              key={item.title}
-              className="rounded-[28px] border border-white/10 bg-white/[0.03] p-7 transition hover:-translate-y-1 hover:border-[#D4AF37]/35 hover:bg-white/[0.05]"
-            >
-              <div className="mb-5 h-px w-16 bg-[#D4AF37]" />
-              <h3 className="text-2xl leading-tight text-white">{item.title}</h3>
-              <p className="mt-5 text-base leading-8 text-white/62">{item.text}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="border-y border-white/10 bg-white/[0.02]">
-        <div className="mx-auto max-w-7xl px-6 py-24 md:px-10">
-          <div className="grid gap-12 md:grid-cols-[1.1fr_0.9fr] md:items-start">
-            <div>
-              <div className="text-sm uppercase tracking-[0.28em] text-[#D4AF37]">Почему это покупают</div>
-              <h2 className="mt-4 text-4xl leading-tight md:text-5xl">Потому что бот — это не просто удобство. Это деньги, сервис и репутация.</h2>
-              <div className="mt-10 space-y-6 text-lg leading-8 text-white/68">
-                <p>Пока менеджер занят, клиент может уйти. Пока администратор отвечает вручную, теряется скорость. Пока гость не понимает меню — снижается шанс на дополнительную продажу.</p>
-                <p>Хорошо сделанный бот закрывает эти точки: принимает обращения, ведёт клиента по сценарию, помогает выбрать блюда и напитки и удерживает внимание до брони или заказа.</p>
-              </div>
-            </div>
-
-            <div className="rounded-[30px] border border-[#D4AF37]/20 bg-[#101010] p-8">
-              <div className="text-sm uppercase tracking-[0.25em] text-white/40">Результат для бизнеса</div>
-              <div className="mt-8 space-y-6">
-                {[
-                  "Меньше потерь входящих обращений",
-                  "Быстрее обработка клиентов",
-                  "Выше уровень сервиса",
-                  "Рост среднего чека за счёт рекомендаций",
-                  "Премиальное впечатление о заведении",
-                ].map((point) => (
-                  <div key={point} className="flex items-start gap-4 border-b border-white/8 pb-5 last:border-b-0 last:pb-0">
-                    <div className="mt-1 h-2.5 w-2.5 rounded-full bg-[#D4AF37]" />
-                    <div className="text-base leading-7 text-white/72">{point}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-24 md:px-10">
-        <div className="mb-14 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <div className="max-w-3xl">
-            <div className="text-sm uppercase tracking-[0.28em] text-[#D4AF37]">Пакеты</div>
-            <h2 className="mt-4 text-4xl leading-tight md:text-5xl">Клиент должен видеть, что именно он покупает.</h2>
-          </div>
-          <p className="max-w-xl text-base leading-8 text-white/60">
-            Эти блоки можно адаптировать под реальные тарифы вашей команды, чтобы сайт сразу продавал понятный объём работ.
-          </p>
-        </div>
-
-        <div className="grid gap-6 lg:grid-cols-3">
-          {packages.map((pkg) => (
-            <div
-              key={pkg.name}
-              className={`rounded-[30px] border p-8 ${
-                pkg.highlighted
-                  ? "border-[#D4AF37]/50 bg-[linear-gradient(180deg,rgba(212,175,55,0.10),rgba(255,255,255,0.03))] shadow-[0_0_60px_rgba(212,175,55,0.08)]"
-                  : "border-white/10 bg-white/[0.03]"
-              }`}
-            >
-              <div className="text-sm uppercase tracking-[0.25em] text-white/40">{pkg.name}</div>
-              <h3 className="mt-4 text-3xl">{pkg.price}</h3>
-              <p className="mt-4 text-base leading-7 text-white/60">{pkg.subtitle}</p>
-              <div className="mt-8 h-px w-full bg-white/10" />
-              <div className="mt-8 space-y-4">
-                {pkg.items.map((item) => (
-                  <div key={item} className="flex items-start gap-3 text-white/72">
-                    <span className="mt-1.5 h-2 w-2 rounded-full bg-[#D4AF37]" />
-                    <span className="text-base leading-7">{item}</span>
-                  </div>
-                ))}
-              </div>
-              <button
-                className={`mt-10 w-full rounded-full px-6 py-3 text-sm font-medium transition ${
-                  pkg.highlighted
-                    ? "bg-[#D4AF37] text-black hover:scale-[1.01]"
-                    : "border border-white/15 text-white hover:border-[#D4AF37]/55 hover:text-[#F3D77B]"
-                }`}
-              >
-                Выбрать пакет
-              </button>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="border-t border-white/10">
-        <div className="mx-auto grid max-w-7xl gap-14 px-6 py-24 md:grid-cols-2 md:px-10">
-          <div>
-            <div className="text-sm uppercase tracking-[0.28em] text-[#D4AF37]">Этапы работы</div>
-            <h2 className="mt-4 text-4xl leading-tight md:text-5xl">Чёткий процесс разработки без хаоса.</h2>
-          </div>
-          <div className="space-y-5">
-            {steps.map((step, index) => (
-              <div key={step} className="flex items-center gap-5 rounded-[24px] border border-white/10 bg-white/[0.03] p-5">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full border border-[#D4AF37]/35 text-[#D4AF37]">
-                  0{index + 1}
-                </div>
-                <div className="text-lg text-white/72">{step}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 pb-24 md:px-10">
-        <div className="rounded-[34px] border border-[#D4AF37]/25 bg-[linear-gradient(180deg,rgba(212,175,55,0.10),rgba(255,255,255,0.03))] px-8 py-10 md:px-12 md:py-14">
-          <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-center">
-            <div>
-              <div className="text-sm uppercase tracking-[0.25em] text-[#D4AF37]">Готовый следующий шаг</div>
-              <h2 className="mt-4 max-w-3xl text-4xl leading-tight md:text-5xl">
-                Сделаем сайт GUESTA, который продаёт не код, а ценность для владельца ресторана.
-              </h2>
-              <p className="mt-6 max-w-2xl text-lg leading-8 text-white/65">
-                Премиальная подача, понятные пакеты, сильные формулировки и визуал, который вызывает доверие к вашей команде с первого экрана.
-              </p>
-            </div>
-            <button className="rounded-full bg-[#D4AF37] px-8 py-4 text-sm font-medium text-black transition hover:scale-[1.02]">
-              Оставить заявку
-            </button>
-          </div>
-        </div>
-      </section>
+<header>
+  <div class="logo">
+    <img src="data:image/webp;base64,UklGRiocAABXRUJQVlA4IB4cAADQjwCdASr0AfQBPjEYi0QiIaEQeaxMIAMEs7d7PcxMb6Lmn97/S9kZ7v/Y/3U/tvv1Wv+6/jz2LeWPTvlU8df5b+z/kz8z+zN/PF2/6n7T/cvy9/rf2n+Xf8z+0/x7/rf8G/Xv+5fXX6r+3v9P/pv8s/4f/Xf7N+pf8v/1v+wf8v/y//o/3z+8f0j/ov8a/7T+6f1j/3f+f/1j+2/+n/9J/2H/xP7P/wv9W/7n+ev9b/Zf9F/zn9mf9L/y3+J/4r/T/8D/6n+v/0X+J/4H+of6H/7P+2/6L/3v+x/2n/Mv0v/7v+U/4j/Pf5v/QP8B//Wf4D/7f/x/4X+1P9X/wn+G/2T/Hv8N/u/8v/yL/Hf8z/w7+g/8f/Df7r+0f5x/6T/Q/1D/y7+6f0X+8/0v+Qv5j/Nv6X+0f8W/7r+3/8H/2v/BP4j+0P4D/rP+qf3D+3P2z/5L+yf6L/Lv9G/vP9G/4T/RP6X/xv8X/q/8z/7D+xv+0/6b+qv8d/4H+O/1L+6v4D/2n+qv8b/9n+Cf5L/VP7D/Bf+V/4r/Lf8v/4r/9n+x/0X+9/8f/9H+2f+H/5j+3f8Z/4D+2/6n/3f+J/6r/Pf7D/xn/Mv5T/8H/Wf9j/y7+o/0L/wP+S/6z+N/3j+zv2R/4L+Vv9L/r/9I/4b/n/9V/yP+R/9L/jv+o/1f/Tf4v/rP9f/4j/af8X/4j+W/0T/g/4b/ov9N/2f+3P6L/Vv6v/Gf9V/uP8B/1j+Sf5P/rf9F/2f+Q/0r+8f+3/5L+Yv0H+qf6D/2v+1v9P/8n+K/1b+av7f/v/1P9H/rP97/yf+qf9T/rP9X/0T+4/8x/2P+o/0T/Nf6v/6H/S/3L/Xv8n/8D/b/9N/7H/Tf0z+4P4v/af9L/0n/K/8n/7T+wv8r/4L+2P9p/8n+Hf5f/4n/Bv7D/4r+cf7j+3v9x/5L+Pf2P/ln9V/4b/qv8j/3H/Kf8B/7v+1v7D/Jf7P/5H+X/4b/oP8V/r/9Y/4z+2v6r/xH+0P6D/oP9f/0n+zv6X/8r/6f8A" />
+    <div>
+      <div class="gold">GUESTA</div>
+      <div style="font-size:12px;color:#777">AI для ресторанов</div>
     </div>
-  );
-}
+  </div>
+  <button class="btn btn-outline">Связаться</button>
+</header>
+
+<section>
+  <h1>Боты для ресторанов,<br><span class="gold">которые продают сервис</span></h1>
+  <p style="margin-top:20px">Автоматизируем запись гостей, помогаем выбирать блюда и увеличиваем средний чек.</p>
+  <div style="margin-top:30px">
+    <button class="btn btn-gold">Получить предложение</button>
+  </div>
+</section>
+
+<section class="section grid grid-3">
+  <div class="card"><h3>Запись 24/7</h3><p>Без потери клиентов</p></div>
+  <div class="card"><h3>Подбор блюд</h3><p>Увеличение среднего чека</p></div>
+  <div class="card"><h3>Автоматизация</h3><p>Снижение нагрузки</p></div>
+</section>
+
+<section class="section">
+  <h2>Тарифы</h2>
+  <div class="grid grid-3">
+    <div class="card"><h3>Base</h3><p>от 120 000 ₽</p></div>
+    <div class="card"><h3 class="gold">Premium</h3><p>от 250 000 ₽</p></div>
+    <div class="card"><h3>Signature</h3><p>индивидуально</p></div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Результат</h2>
+  <p>Больше заявок, быстрее ответы, выше сервис и прибыль.</p>
+</section>
+
+</div>
+
+</body>
+</html>
